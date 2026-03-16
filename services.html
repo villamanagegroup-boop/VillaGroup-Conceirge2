@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services — Villa Concierge Co.</title>
+  <meta name="description" content="Insurance ALE housing, corporate relocation, travel nurse housing, Arrive & Thrive™ hospitality, and family support services — all managed by Villa Concierge Co." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Villa Concierge Co." />
+  <meta property="og:title" content="Our Services — Villa Concierge Co." />
+  <meta property="og:description" content="Insurance ALE housing, corporate relocation, travel nurse housing, Arrive & Thrive™ hospitality, and family support services — all managed by Villa Concierge Co." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── SERVICES PAGE STYLES ── */
+
+    /* HERO */
+    .services-hero {
+      background: var(--champagne);
+      padding: 7rem 2rem 6rem;
+      text-align: center;
+    }
+
+    .services-hero h1 {
+      color: var(--navy);
+      max-width: 20ch;
+      margin: 0 auto 1.25rem;
+    }
+
+    .services-hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 52ch;
+      margin: 0 auto;
+    }
+
+    /* CATEGORY NAV */
+    .category-nav {
+      position: relative;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 0 2rem;
+    }
+
+    .category-nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .category-nav-inner::-webkit-scrollbar { display: none; }
+
+    .cat-nav-link {
+      flex-shrink: 0;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(245, 239, 224, 0.55);
+      padding: 1.1rem 1.25rem;
+      border-bottom: 2px solid transparent;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+
+    .cat-nav-link:hover,
+    .cat-nav-link.is-active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    @media (max-width: 700px) {
+      .category-header {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+    }
+
+    /* SERVICE CATEGORY BLOCK */
+    .service-category {
+      padding: 5rem 2rem;
+      scroll-margin-top: calc(var(--nav-h) + 52px);
+    }
+
+    .service-category:nth-child(even) {
+      background: var(--section-alt);
+    }
+
+    .service-category-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .category-header-text { flex: 1; }
+
+    .category-header h2 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .category-header p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 55ch;
+    }
+
+    .category-icon-block {
+      width: 72px;
+      height: 72px;
+      background: var(--gold-dim);
+      border: 1.5px solid rgba(201, 168, 76, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+
+    .category-icon-block svg {
+      width: 32px;
+      height: 32px;
+      color: var(--gold);
+    }
+
+    /* SERVICE ITEMS GRID */
+    .service-items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(201,168,76,0.1);
+    }
+
+    .service-item {
+      background: var(--white);
+      padding: 1.75rem 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: all var(--transition);
+    }
+
+    .service-item:hover {
+      background: var(--champagne);
+    }
+
+    .service-item-check {
+      width: 20px;
+      height: 20px;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .service-item-body h4 {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+
+    .service-item-body p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: none;
+      line-height: 1.55;
+    }
+
+    /* Arrive & Thrive category — light background, navy text */
+    .service-category--hospitality {
+      background: var(--champagne);
+    }
+
+    .service-category--hospitality .category-header h2 { color: var(--navy); }
+    .service-category--hospitality .category-header p  { color: var(--text-muted); }
+    .service-category--hospitality .category-icon-block {
+      background: var(--gold-dim);
+      border-color: rgba(201,168,76,0.25);
+    }
+
+    .service-category--hospitality .service-items {
+      background: rgba(201,168,76,0.15);
+    }
+
+    .service-category--hospitality .service-item {
+      background: var(--white);
+    }
+
+    .service-category--hospitality .service-item:hover {
+      background: #FDFAF5;
+    }
+
+    .service-category--hospitality .service-item-body h4 { color: var(--navy); }
+    .service-category--hospitality .service-item-body p  { color: var(--text-muted); }
+
+    .hospitality-cta {
+      margin-top: 2.5rem;
+      padding: 1.75rem 2rem;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .hospitality-cta p {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-muted);
+      max-width: 55ch;
+    }
+
+    /* PRICING CALLOUT */
+    .pricing-callout {
+      padding: 5rem 2rem;
+      background: var(--bg);
+    }
+
+    .pricing-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--champagne);
+      border: 1.5px solid rgba(201,168,76,0.3);
+      padding: 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+
+    .pricing-card h2 {
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .pricing-card p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin: 0 auto 2.5rem;
+      max-width: 50ch;
+    }
+
+    .pricing-features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .pricing-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+
+    .pricing-feature svg {
+      width: 16px;
+      height: 16px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* Category alternating bg fix */
+    .service-category:nth-child(even) .service-item {
+      background: var(--white);
+    }
+    .service-category:nth-child(even) .service-item:hover {
+      background: #e8e3da;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .category-header {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .service-items {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pricing-card {
+        padding: 3rem 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .service-items {
+        grid-template-columns: 1fr;
+      }
+
+      .hospitality-cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .category-nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a href="index.html" class="logo logo--light" aria-label="Villa Concierge Co.">
+        <span class="logo__name">VILLA CONCIERGE CO.</span>
+        <span class="logo__rule"></span>
+        <span class="logo__parent">A Villa Management Group Company</span>
+      </a>
+      <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="serve.html">Who We Serve</a></li>
+          <li><a href="hospitality.html">Arrive &amp; Thrive™</a></li>
+          <li><a href="insurance.html">For Adjusters</a></li>
+          <li><a href="homeowners.html">For Homeowners</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--gold nav-cta">Contact Us</a>
+      </nav>
+      <div class="nav-right">
+        <a href="tel:+10000000000" class="nav-phone">(000) 000-0000</a>
+        <a href="contact.html" class="btn btn--gold nav-cta">Get Housing Now</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section class="services-hero">
+    <span class="label">Full Service Offering</span>
+    <span class="gold-rule gold-rule--center"></span>
+    <h1>Every Service You Need.<br/>One Company.</h1>
+    <p>Five categories of service. Dozens of solutions. All managed in-house, billed transparently, and delivered with a level of care you won't find anywhere else.</p>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       STICKY CATEGORY NAV
+  ══════════════════════════════════════════ -->
+  <nav class="category-nav" aria-label="Service categories">
+    <div class="category-nav-inner">
+      <a href="#ale" class="cat-nav-link">Insurance ALE</a>
+      <a href="#placement" class="cat-nav-link">Placement &amp; Management</a>
+      <a href="#hospitality" class="cat-nav-link">Arrive &amp; Thrive™</a>
+      <a href="#corporate" class="cat-nav-link">Corporate &amp; Healthcare</a>
+      <a href="#family" class="cat-nav-link">Family Support</a>
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════
+       1. INSURANCE ALE HOUSING
+  ══════════════════════════════════════════ -->
+  <section class="service-category" id="ale">
+    <div class="service-category-inner">
+
+      <div class="category-header">
+        <div class="category-icon-block">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <div class="category-header-text">
+          <span class="label">Category 01</span>
+          <h2>Insurance ALE Housing</h2>
+          <p>When a claim triggers ALE coverage, we become your placement partner — handling every aspect of temporary housing from the first call to the final invoice. No dropped balls. No complaints. No rework.</p>
+        </div>
+      </div>
+
+      <div class="service-items" role="list">
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Extended Stay Hotel Placement</h4>
+            <p>Immediate hotel placement while longer-term housing is sourced. Vetted properties only.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Furnished Apartment Placement</h4>
+            <p>Curated furnished apartments matched to family size, location, and ALE budget parameters.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Homeowner Property Placement</h4>
+            <p>Private home placements through our vetted homeowner partner network for families who need space.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Controlled Unit Placement</h4>
+            <p>Direct access to Villa Management Group's controlled inventory for priority placements.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>CAT Event Rapid Response</h4>
+            <p>24/7 catastrophe response for mass displacement events. Scalable, coordinated, fast.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Adjuster &amp; Relief Team Housing</h4>
+            <p>Temporary housing for the adjusters and crews responding to the same events. One call covers all.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       2. PLACEMENT & MANAGEMENT
+  ══════════════════════════════════════════ -->
+  <section class="service-category" id="placement">
+    <div class="service-category-inner">
+
+      <div class="category-header">
+        <div class="category-icon-block">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/>
+            <rect x="9" y="3" width="6" height="4" rx="1"/>
+            <path d="M9 12h6M9 16h4"/>
+          </svg>
+        </div>
+        <div class="category-header-text">
+          <span class="label">Category 02</span>
+          <h2>Placement &amp; Management</h2>
+          <p>The operational backbone behind every placement — from intake and case setup to move-out documentation and billing. Every step is handled, tracked, and documented.</p>
+        </div>
+      </div>
+
+      <div class="service-items" role="list">
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>24-Hour Case Setup</h4>
+            <p>Intake, needs assessment, and housing match completed within 24 hours of referral.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Monthly Case Management</h4>
+            <p>Ongoing check-ins, documentation updates, and coordination for extended placements.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Move-In &amp; Move-Out Coordination</h4>
+            <p>Scheduled, supervised transitions for every placement — no surprises on either end.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Unit Inspections &amp; Documentation</h4>
+            <p>Pre-move and post-move inspections with photo documentation and written reports.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Billing &amp; Carrier Invoicing</h4>
+            <p>Clean, itemized invoices formatted for insurance carrier review and approval. No rework.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Partner Portal Access</h4>
+            <p>Adjusters and HR managers access live case status, documents, and billing history in one place.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       3. ARRIVE & THRIVE™ — NAVY
+  ══════════════════════════════════════════ -->
+  <section class="service-category service-category--hospitality" id="hospitality">
+    <div class="service-category-inner">
+
+      <div class="category-header">
+        <div class="category-icon-block">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        <div class="category-header-text">
+          <span class="label">Category 03</span>
+          <h2>Arrive &amp; Thrive™ Hospitality</h2>
+          <p>Our signature hospitality layer — optional, add-on services that transform a temporary housing placement into a genuine home experience. No other relocation company offers this.</p>
+        </div>
+      </div>
+
+      <div class="service-items" role="list">
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Welcome Kits</h4>
+            <p>Curated arrival packages — essentials, local guides, and a personal note from the team.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Fridge &amp; Pantry Stocking</h4>
+            <p>Move-in grocery stocking based on family preferences, dietary needs, and household size.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Weekly Housekeeping</h4>
+            <p>Professional cleaning service on a weekly schedule throughout the duration of the stay.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Linen Service</h4>
+            <p>Fresh linens, towels, and bedding provided and refreshed on schedule.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Technology Setup</h4>
+            <p>WiFi configuration, streaming setup, and device support so families are connected from day one.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>And More...</h4>
+            <p>Childcare referrals, local dining guides, grocery delivery, and more — ask us what you need.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hospitality-cta">
+        <p>Arrive &amp; Thrive™ is available as a full program or à la carte. Learn about the complete hospitality experience.</p>
+        <a href="hospitality.html" class="btn btn--gold">Explore Arrive &amp; Thrive™</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       4. CORPORATE & HEALTHCARE
+  ══════════════════════════════════════════ -->
+  <section class="service-category" id="corporate">
+    <div class="service-category-inner">
+
+      <div class="category-header">
+        <div class="category-icon-block">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+            <line x1="12" y1="12" x2="12" y2="16"/>
+            <line x1="10" y1="14" x2="14" y2="14"/>
+          </svg>
+        </div>
+        <div class="category-header-text">
+          <span class="label">Category 04</span>
+          <h2>Corporate &amp; Healthcare</h2>
+          <p>Premium furnished housing for relocating professionals, traveling clinicians, and project teams — managed end-to-end with clean billing and zero administrative burden on your organization.</p>
+        </div>
+      </div>
+
+      <div class="service-items" role="list">
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Corporate Relocation Housing</h4>
+            <p>Fully furnished, professionally managed housing for relocating employees at every level.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Travel Nurse &amp; Healthcare Housing</h4>
+            <p>Consistent, well-maintained housing near assignment facilities — with fast placement and clean billing.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Government &amp; Military TDY Housing</h4>
+            <p>Per diem–compliant furnished housing for government employees and military TDY assignments.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Construction Workforce Housing</h4>
+            <p>Group housing solutions near job sites for construction and infrastructure project crews.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       5. FAMILY SUPPORT SERVICES
+  ══════════════════════════════════════════ -->
+  <section class="service-category" id="family">
+    <div class="service-category-inner">
+
+      <div class="category-header">
+        <div class="category-icon-block">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <div class="category-header-text">
+          <span class="label">Category 05</span>
+          <h2>Family Support Services</h2>
+          <p>Housing is just the beginning. When a family is displaced, the challenges extend far beyond finding a place to sleep. We address the whole family's needs — from school enrollment to mental wellness.</p>
+        </div>
+      </div>
+
+      <div class="service-items" role="list">
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>School Enrollment Navigation</h4>
+            <p>Guidance and coordination for enrolling children in local schools near the temporary housing placement.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Mental Health Referrals</h4>
+            <p>Connections to licensed therapists, counselors, and crisis support services in the local area.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Pet Services &amp; Referrals</h4>
+            <p>Pet-friendly housing sourcing, local vet referrals, and boarding options when needed.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Community Integration</h4>
+            <p>Local resource guides, neighborhood orientation, and connections to community organizations.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Disaster Recovery Guidance</h4>
+            <p>Practical guidance on navigating insurance claims, FEMA resources, and contractor vetting.</p>
+          </div>
+        </div>
+
+        <div class="service-item" role="listitem">
+          <svg class="service-item-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <div class="service-item-body">
+            <h4>Weekly Family Check-Ins</h4>
+            <p>Scheduled welfare calls throughout the stay to address needs before they become complaints.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       PRICING CALLOUT
+  ══════════════════════════════════════════ -->
+  <section class="pricing-callout">
+    <div class="container">
+      <div class="pricing-card">
+
+        <span class="label">Transparent Pricing</span>
+        <span class="gold-rule gold-rule--center"></span>
+        <h2>No Surprises. Ever.</h2>
+        <p>Transparent, documented pricing for every service. Carrier-ready invoicing built in — so there's no ambiguity at billing time.</p>
+
+        <div class="pricing-features">
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>Itemized line items per service</span>
+          </div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>Carrier-formatted invoices</span>
+          </div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>ALE-compliant documentation</span>
+          </div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>No hidden fees</span>
+          </div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>Partner rate agreements available</span>
+          </div>
+        </div>
+
+        <div class="btn-group" style="justify-content: center;">
+          <a href="contact.html" class="btn btn--navy">Download Our Rate Card</a>
+          <a href="contact.html" class="btn btn--outline">Talk to Our Team</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo logo--light" aria-label="Villa Concierge Co.">
+            <span class="logo__name">VILLA CONCIERGE CO.</span>
+            <span class="logo__rule"></span>
+            <span class="logo__parent">A Villa Management Group Company</span>
+          </a>
+          <p class="footer-tagline">Where Families Land Softly</p>
+          <p class="footer-parent">© 2025 Villa Management Group</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="hospitality.html">Arrive &amp; Thrive™</a></li>
+            <li><a href="insurance.html">For Adjusters</a></li>
+            <li><a href="homeowners.html">For Homeowners</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Insurance ALE Housing</a></li>
+            <li><a href="corporate.html">Corporate Relocation</a></li>
+            <li><a href="corporate.html">Travel Nurse Housing</a></li>
+            <li><a href="hospitality.html">Arrive &amp; Thrive™</a></li>
+            <li><a href="services.html">Family Support Services</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Contact Us</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/>
+            </svg>
+            <p><a href="tel:+10000000000">(000) 000-0000</a><br/>Available 24/7</p>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <p><a href="mailto:info@villaconcierge.co">info@villaconcierge.co</a></p>
+          </div>
+          <div class="footer-availability">
+            <p><strong>CAT &amp; Emergency Response</strong><br/>Available 24/7 for catastrophe events and urgent placements.</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Villa Concierge Co. | A Villa Management Group Company | All Rights Reserved</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('is-scrolled', window.scrollY > 40); }, { passive: true });
+
+    // Mobile menu
+    const navToggle = document.getElementById('navToggle');
+    const navMenu   = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('is-open');
+      navToggle.classList.toggle('is-open', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('is-open');
+        navToggle.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Active category nav on scroll
+    const sections   = document.querySelectorAll('.service-category[id]');
+    const catLinks   = document.querySelectorAll('.cat-nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          catLinks.forEach(link => {
+            link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>

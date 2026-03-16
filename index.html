@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Villa Concierge Co. — Where Families Land Softly</title>
+  <meta name="description" content="Premium insurance relocation housing and family concierge services. Villa Concierge Co. places families in hours — not days. Serving the Southeast & Gulf Coast." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Villa Concierge Co." />
+  <meta property="og:title" content="Villa Concierge Co. — Where Families Land Softly" />
+  <meta property="og:description" content="Premium insurance relocation housing and family concierge services. Villa Concierge Co. places families in hours — not days. Serving the Southeast & Gulf Coast." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── HOME PAGE SPECIFIC STYLES ── */
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      margin-top: calc(-1 * var(--nav-h));
+      padding-top: var(--nav-h);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: #0a1520;
+      background-image:
+        radial-gradient(ellipse at 22% 65%, rgba(201, 168, 76, 0.09) 0%, transparent 52%),
+        radial-gradient(ellipse at 82% 25%, rgba(201, 168, 76, 0.06) 0%, transparent 45%),
+        linear-gradient(158deg, #060f17 0%, #1a2b3a 38%, #1F2D3D 60%, #0d1c2a 100%);
+    }
+
+    /* Subtle diagonal texture */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 80px,
+          rgba(201, 168, 76, 0.018) 80px,
+          rgba(201, 168, 76, 0.018) 81px
+        );
+      pointer-events: none;
+    }
+
+    /* Gold glow bottom */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 120px;
+      background: radial-gradient(ellipse, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 2rem 6rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-label span {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-label::before,
+    .hero-label::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.7;
+    }
+
+    .hero h1 {
+      color: var(--champagne);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 500;
+      line-height: 1.12;
+      margin-bottom: 1.5rem;
+      max-width: 14ch;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: rgba(245, 239, 224, 0.72);
+      max-width: 52ch;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-trust {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-trust span {
+      font-size: 0.78rem;
+      color: rgba(245, 239, 224, 0.45);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-trust-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    /* WHAT WE DO */
+    .what-we-do-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 3rem 2.5rem;
+      position: relative;
+      transition: all var(--transition);
+      border-top: 3px solid transparent;
+    }
+
+    .service-card:hover {
+      border-top-color: var(--gold);
+      box-shadow: var(--shadow-card);
+      transform: translateY(-4px);
+      z-index: 1;
+    }
+
+    .service-card__num {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(201, 168, 76, 0.12);
+      line-height: 1;
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .service-card p {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: #555;
+    }
+
+    /* WHY VILLA */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      margin-top: 1rem;
+    }
+
+    .why-card {
+      padding: 2.75rem;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(201, 168, 76, 0.12);
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--gold);
+      transition: height 0.4s ease;
+    }
+    .why-card:hover::before { height: 100%; }
+    .why-card:hover {
+      background: rgba(255,255,255,0.055);
+      border-color: rgba(201, 168, 76, 0.3);
+    }
+
+    .why-star {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .why-card h3 {
+      color: var(--champagne);
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .why-card p {
+      font-size: 0.95rem;
+      color: rgba(245, 239, 224, 0.65);
+      line-height: 1.75;
+    }
+
+    /* HOW IT WORKS */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 2.5rem;
+      left: calc(12.5% + 1.25rem);
+      right: calc(12.5% + 1.25rem);
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold) 0%, rgba(201,168,76,0.3) 100%);
+      z-index: 0;
+    }
+
+    .step {
+      padding: 0 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .step:first-child { padding-left: 0; }
+    .step:last-child { padding-right: 0; }
+
+    .step-num {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.75rem;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.2);
+    }
+
+    .step-num span {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .step h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+      font-family: var(--font-body);
+    }
+
+    .step p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: none;
+    }
+
+    /* WHO WE SERVE */
+    .serve-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.12);
+    }
+
+    .serve-item {
+      flex: 1;
+      min-width: 160px;
+      padding: 2.5rem 1.5rem;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+      transition: all var(--transition);
+    }
+
+    .serve-item:hover {
+      background: var(--champagne);
+    }
+
+    .serve-item svg {
+      width: 32px;
+      height: 32px;
+      color: var(--gold);
+    }
+
+    .serve-item span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201, 168, 76, 0.18);
+      padding: 2.5rem;
+      position: relative;
+      transition: all var(--transition);
+    }
+
+    .testimonial-card:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(201, 168, 76, 0.35);
+      transform: translateY(-3px);
+    }
+
+    .quote-mark {
+      font-family: var(--font-heading);
+      font-size: 5rem;
+      line-height: 0.5;
+      color: var(--gold);
+      opacity: 0.35;
+      margin-bottom: 1.25rem;
+      display: block;
+      font-weight: 700;
+    }
+
+    .testimonial-card p {
+      font-size: 0.97rem;
+      font-style: italic;
+      color: rgba(245, 239, 224, 0.8);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      max-width: none;
+    }
+
+    .testimonial-attr {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .testimonial-attr-line {
+      width: 24px;
+      height: 1.5px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .testimonial-attr span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    /* RESPONSIVE HOME */
+    @media (max-width: 1000px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+      .steps-grid::before { display: none; }
+      .what-we-do-grid { grid-template-columns: 1fr; gap: 2px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 2.6rem; }
+      .hero-trust { flex-wrap: wrap; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .serve-item { min-width: 130px; padding: 2rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a href="index.html" class="logo logo--light" aria-label="Villa Concierge Co.">
+        <span class="logo__name">VILLA CONCIERGE CO.</span>
+        <span class="logo__rule"></span>
+        <span class="logo__parent">A Villa Management Group Company</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="serve.html">Who We Serve</a></li>
+          <li><a href="hospitality.html">Arrive &amp; Thrive™</a></li>
+          <li><a href="insurance.html">For Adjusters</a></li>
+          <li><a href="homeowners.html">For Homeowners</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--gold nav-cta">Contact Us</a>
+      </nav>
+      <div class="nav-right">
+        <a href="tel:+10000000000" class="nav-phone">(000) 000-0000</a>
+        <a href="contact.html" class="btn btn--gold nav-cta">Get Housing Now</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-content">
+
+      <div class="hero-label">
+        <span>Villa Concierge Co.</span>
+      </div>
+
+      <h1>Where Families<br /><em>Land Softly</em></h1>
+
+      <p class="hero-sub">
+        Premium relocation housing and concierge support for families navigating displacement — managed entirely by Villa Concierge Co.
+      </p>
+
+      <div class="btn-group">
+        <a href="contact.html" class="btn btn--gold">Get Housing Now</a>
+        <a href="insurance.html" class="btn btn--outline-white">For Insurance Professionals</a>
+      </div>
+
+      <div class="hero-trust">
+        <span>Serving families across the Southeast &amp; Gulf Coast</span>
+        <div class="hero-trust-dot"></div>
+        <span>Available 24/7</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       WHAT WE DO — 3 COLUMN
+  ══════════════════════════════════════════ -->
+  <section class="section" style="background: var(--bg); padding-top: 5rem; padding-bottom: 0;">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="label">What We Do</span>
+        <span class="gold-rule gold-rule--center"></span>
+        <h2>Three Channels. One Concierge.</h2>
+        <p>We handle every type of temporary and transitional housing — under one roof, with one call.</p>
+      </div>
+    </div>
+
+    <div class="what-we-do-grid">
+
+      <!-- Card 1 -->
+      <article class="service-card">
+        <span class="service-card__num">01</span>
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 10.5L12 3l9 7.5"/>
+            <path d="M5 8.5V20a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1V8.5"/>
+            <path d="M9 14a3 3 0 006 0"/>
+          </svg>
+        </div>
+        <h3>Insurance ALE Housing</h3>
+        <p>When disaster displaces a family, we step in immediately. We manage every aspect of temporary housing so adjusters and families never have to.</p>
+        <a href="insurance.html" class="label" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.4rem; color: var(--gold);">
+          Learn More
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="service-card">
+        <span class="service-card__num">02</span>
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="7" width="20" height="14" rx="1"/>
+            <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+            <line x1="12" y1="12" x2="12" y2="16"/>
+            <line x1="10" y1="14" x2="14" y2="14"/>
+          </svg>
+        </div>
+        <h3>Corporate &amp; Healthcare</h3>
+        <p>Furnished housing for relocating employees, travel nurses, and project teams. Guaranteed quality, guaranteed payment, zero management burden.</p>
+        <a href="corporate.html" class="label" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.4rem; color: var(--gold);">
+          Learn More
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="service-card">
+        <span class="service-card__num">03</span>
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        <h3>Arrive &amp; Thrive™</h3>
+        <p>Our hospitality layer turns temporary housing into a genuine home experience. Welcome kits, stocked fridges, weekly housekeeping, and family support — all optional, all extraordinary.</p>
+        <a href="hospitality.html" class="label" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.4rem; color: var(--gold);">
+          Learn More
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       WHY VILLA CONCIERGE CO. — NAVY
+  ══════════════════════════════════════════ -->
+  <section class="section section--navy">
+    <div class="container">
+
+      <div class="section-header text-center">
+        <span class="label">The Difference</span>
+        <span class="gold-rule gold-rule--center"></span>
+        <h2>Why Villa Concierge Co.</h2>
+        <p>Four things no other relocation company can say.</p>
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <div class="why-star">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold)" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            <span class="label" style="color: var(--gold);">Speed</span>
+          </div>
+          <h3>Placed in Hours, Not Days</h3>
+          <p>Our network spans hotels, homeowner properties, and controlled units. We match families to the right housing immediately — not after a 48-hour search window.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-star">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold)" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            <span class="label" style="color: var(--gold);">Coverage</span>
+          </div>
+          <h3>Every Channel, One Call</h3>
+          <p>Hotel referrals, homeowner partnerships, furnished apartments. One company covers all three so you never hear "we don't have anything." We always have something.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-star">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold)" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            <span class="label" style="color: var(--gold);">Hospitality</span>
+          </div>
+          <h3>The Arrive &amp; Thrive™ Difference</h3>
+          <p>No other relocation company offers a full hospitality layer. Families arrive to a stocked fridge, a clean home, and a team that cares — from day one to move-out.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-star">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold)" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            <span class="label" style="color: var(--gold);">Whole Family</span>
+          </div>
+          <h3>Family Support Built In</h3>
+          <p>School enrollment, mental health referrals, pet services, community connection. We support the whole family — not just their housing — for the duration of every stay.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       HOW IT WORKS — 4 STEPS
+  ══════════════════════════════════════════ -->
+  <section class="section section--champagne">
+    <div class="container">
+
+      <div class="section-header text-center">
+        <span class="label">The Process</span>
+        <span class="gold-rule gold-rule--center"></span>
+        <h2>How It Works</h2>
+        <p>From the first call to the final move-out, we handle everything.</p>
+      </div>
+
+      <div class="steps-grid">
+
+        <div class="step">
+          <div class="step-num"><span>1</span></div>
+          <h4>Claim or Assignment Received</h4>
+          <p>Adjuster, HR team, or agency contacts Villa Concierge Co. by phone or through our partner portal.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num"><span>2</span></div>
+          <h4>Needs Assessment</h4>
+          <p>We conduct a thorough 24-hour intake covering family size, pets, dietary needs, school requirements, and more.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num"><span>3</span></div>
+          <h4>Perfect Match Placed</h4>
+          <p>We source from our three-channel network and place the family — typically within hours of the assignment.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num"><span>4</span></div>
+          <h4>Concierge Experience Begins</h4>
+          <p>Arrive &amp; Thrive™ hospitality services activate. Weekly check-ins and family support continue throughout.</p>
+        </div>
+
+      </div>
+
+      <div class="text-center" style="margin-top: 3.5rem;">
+        <a href="contact.html" class="btn btn--navy">Start a Placement</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       WHO WE SERVE — ICON ROW
+  ══════════════════════════════════════════ -->
+  <section class="section" style="background: var(--bg);">
+    <div class="container">
+
+      <div class="section-header text-center">
+        <span class="label">Our Clients</span>
+        <span class="gold-rule gold-rule--center"></span>
+        <h2>Who We Serve</h2>
+        <p>We work with the professionals and families who need housing solutions fast — and done right.</p>
+      </div>
+
+      <div class="serve-row" role="list">
+
+        <div class="serve-item" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M23 7l-7 5 7 5V7z"/>
+            <rect x="1" y="5" width="15" height="14" rx="2"/>
+          </svg>
+          <span>Insurance Carriers</span>
+        </div>
+
+        <div class="serve-item" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/>
+            <rect x="9" y="3" width="6" height="4" rx="1"/>
+            <path d="M9 12h6M9 16h4"/>
+          </svg>
+          <span>Independent Adjusters</span>
+        </div>
+
+        <div class="serve-item" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+          </svg>
+          <span>HR &amp; Relocation Firms</span>
+        </div>
+
+        <div class="serve-item" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+          <span>Travel Nurse Agencies</span>
+        </div>
+
+        <div class="serve-item" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2 20h20"/>
+            <path d="M6 20V10l6-6 6 6v10"/>
+            <path d="M10 20v-5h4v5"/>
+          </svg>
+          <span>Construction Companies</span>
+        </div>
+
+        <div class="serve-item" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+          <span>Displaced Families</span>
+        </div>
+
+      </div>
+
+      <div class="text-center" style="margin-top: 2.5rem;">
+        <a href="serve.html" class="btn btn--outline">See Who We Serve</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       TESTIMONIALS — NAVY
+  ══════════════════════════════════════════ -->
+  <section class="section section--navy">
+    <div class="container">
+
+      <div class="section-header text-center">
+        <span class="label">From Those We've Served</span>
+        <span class="gold-rule gold-rule--center"></span>
+        <h2>What Our Clients Say</h2>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+          <p>Villa Concierge Co. placed our policyholder in a beautiful 3-bedroom home within 4 hours of my call. I've never had a TPA move that fast. This is the standard every adjuster deserves.</p>
+          <div class="testimonial-attr">
+            <div class="testimonial-attr-line"></div>
+            <span>Independent Adjuster &mdash; Atlanta, GA</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+          <p>Our family arrived to a fully stocked fridge and a welcome kit waiting for us. In the middle of one of the hardest weeks of our lives, someone had thought of everything. We felt human again.</p>
+          <div class="testimonial-attr">
+            <div class="testimonial-attr-line"></div>
+            <span>Displaced Family &mdash; Houston, TX</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+          <p>We place all of our travel nurses through Villa Concierge Co. The quality is consistent, the billing is clean, and our nurses are always taken care of. Exactly what a staffing agency needs.</p>
+          <div class="testimonial-attr">
+            <div class="testimonial-attr-line"></div>
+            <span>Healthcare Staffing Manager &mdash; Southeast Region</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand -->
+        <div>
+          <a href="index.html" class="logo logo--light" aria-label="Villa Concierge Co.">
+            <span class="logo__name">VILLA CONCIERGE CO.</span>
+            <span class="logo__rule"></span>
+            <span class="logo__parent">A Villa Management Group Company</span>
+          </a>
+          <p class="footer-tagline">Where Families Land Softly</p>
+          <p class="footer-parent">© 2025 Villa Management Group</p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="hospitality.html">Arrive &amp; Thrive™</a></li>
+            <li><a href="insurance.html">For Adjusters</a></li>
+            <li><a href="homeowners.html">For Homeowners</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Insurance ALE Housing</a></li>
+            <li><a href="corporate.html">Corporate Relocation</a></li>
+            <li><a href="corporate.html">Travel Nurse Housing</a></li>
+            <li><a href="hospitality.html">Arrive &amp; Thrive™</a></li>
+            <li><a href="services.html">Family Support Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div>
+          <h4 class="footer-heading">Contact Us</h4>
+
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/>
+            </svg>
+            <p><a href="tel:+10000000000">(000) 000-0000</a><br/>Available 24/7</p>
+          </div>
+
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <p><a href="mailto:info@villaconcierge.co">info@villaconcierge.co</a></p>
+          </div>
+
+          <div class="footer-availability">
+            <p><strong>CAT &amp; Emergency Response</strong><br/>Available 24/7 for catastrophe events and urgent placements.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Villa Concierge Co. | A Villa Management Group Company | All Rights Reserved</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════ -->
+  <script>
+    // Nav scroll behavior
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('is-scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu   = document.getElementById('navMenu');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('is-open');
+      navToggle.classList.toggle('is-open', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // Close menu on link click
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('is-open');
+        navToggle.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Active nav link
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    });
+  </script>
+
+</body>
+</html>

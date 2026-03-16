@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Corporate &amp; Healthcare — Villa Concierge Co.</title>
+  <meta name="description" content="Premium furnished housing for corporate relocation, travel nurses, healthcare professionals, and construction teams. Fast placement, clean billing, zero management burden." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Villa Concierge Co." />
+  <meta property="og:title" content="For Corporate &amp; Healthcare — Villa Concierge Co." />
+  <meta property="og:description" content="Premium furnished housing for corporate relocation, travel nurses, healthcare professionals, and construction teams. Fast placement, clean billing, zero management burden." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── CORPORATE & HEALTHCARE PAGE ── */
+
+    /* HERO */
+    .corp-hero {
+      background:
+        radial-gradient(ellipse at 30% 60%, rgba(201,168,76,0.08) 0%, transparent 52%),
+        linear-gradient(155deg, #060f17 0%, #1a2b3a 40%, #1F2D3D 65%, #0d1c2a 100%);
+      padding: 7rem 2rem 6rem;
+      text-align: center;
+    }
+
+    .corp-hero h1 {
+      color: var(--champagne);
+      max-width: 22ch;
+      margin: 0 auto 1.25rem;
+    }
+
+    .corp-hero p {
+      color: rgba(245,239,224,0.72);
+      font-size: 1.1rem;
+      max-width: 52ch;
+      margin: 0 auto;
+    }
+
+    /* AUDIENCE SUB-NAV */
+    .corp-subnav {
+      position: sticky;
+      top: var(--nav-h);
+      z-index: 100;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(201,168,76,0.18);
+    }
+
+    .corp-subnav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .corp-subnav-inner::-webkit-scrollbar { display: none; }
+
+    .corp-subnav-link {
+      flex-shrink: 0;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(245,239,224,0.5);
+      padding: 1.1rem 1.5rem;
+      border-bottom: 2px solid transparent;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+
+    .corp-subnav-link:hover,
+    .corp-subnav-link.is-active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    /* SECTION SHARED */
+    .corp-section {
+      padding: 6rem 2rem;
+      scroll-margin-top: calc(var(--nav-h) + 52px);
+    }
+
+    .corp-section-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    /* Section label bar */
+    .corp-section-label-bar {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .corp-section-label-bar .label { flex-shrink: 0; }
+
+    .corp-section-label-bar::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(201,168,76,0.18);
+    }
+
+    /* Two-column intro layout */
+    .corp-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-bottom: 4rem;
+    }
+
+    .corp-intro h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin-bottom: 1rem;
+    }
+
+    .corp-intro p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-width: none;
+      margin-bottom: 1.25rem;
+    }
+
+    .corp-intro p:last-of-type { margin-bottom: 2rem; }
+
+    /* Spec pills */
+    .corp-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .corp-spec {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      background: var(--champagne);
+      border: 1px solid rgba(201,168,76,0.2);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+    }
+
+    .corp-spec svg {
+      width: 14px;
+      height: 14px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* Features grid */
+    .corp-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      background: rgba(201,168,76,0.1);
+    }
+
+    .corp-feature {
+      background: var(--white);
+      padding: 2rem 2.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: background var(--transition);
+    }
+
+    .corp-feature:hover { background: var(--champagne); }
+
+    .corp-feature-icon {
+      width: 36px;
+      height: 36px;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .corp-feature h4 {
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .corp-feature p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: none;
+    }
+
+    /* ── SECTION 1: CORPORATE RELOCATION ── */
+    #corporate { background: var(--bg); }
+    #corporate .corp-features .corp-feature { background: var(--white); }
+
+    /* ── SECTION 2: HEALTHCARE ── */
+    #healthcare { background: var(--section-alt); }
+    #healthcare .corp-features .corp-feature { background: var(--champagne); }
+    #healthcare .corp-features .corp-feature:hover { background: #e6dfd4; }
+    #healthcare .corp-spec { background: var(--white); }
+
+    /* ── SECTION 3: CONSTRUCTION — NAVY ── */
+    #construction {
+      background: var(--navy);
+    }
+
+    #construction .corp-section-label-bar::after {
+      background: rgba(201,168,76,0.15);
+    }
+
+    #construction .corp-intro h2 { color: var(--champagne); }
+    #construction .corp-intro p  { color: rgba(245,239,224,0.65); }
+
+    #construction .corp-spec {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(201,168,76,0.2);
+      color: var(--champagne);
+    }
+
+    #construction .corp-features { background: rgba(201,168,76,0.08); }
+    #construction .corp-features .corp-feature {
+      background: rgba(255,255,255,0.04);
+    }
+    #construction .corp-features .corp-feature:hover {
+      background: rgba(255,255,255,0.07);
+    }
+    #construction .corp-feature h4 { color: var(--champagne); }
+    #construction .corp-feature p  { color: rgba(245,239,224,0.58); }
+
+    /* PRICING TABLE */
+    .corp-pricing {
+      margin-top: 3rem;
+    }
+
+    .corp-pricing-heading {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .corp-pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5px;
+      background: rgba(201,168,76,0.1);
+    }
+
+    .corp-pricing-item {
+      background: var(--white);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    #construction .corp-pricing-grid { background: rgba(201,168,76,0.08); }
+    #construction .corp-pricing-item { background: rgba(255,255,255,0.05); }
+
+    .corp-pricing-item .unit-type {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .corp-pricing-item .unit-icon {
+      width: 28px;
+      height: 28px;
+      color: var(--gold);
+      margin: 0 auto 0.75rem;
+    }
+
+    .corp-pricing-item .unit-label {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    #construction .corp-pricing-item .unit-type,
+    #construction .corp-pricing-item .unit-label { color: rgba(245,239,224,0.6); }
+
+    /* SHARED CTA STRIP */
+    .corp-cta {
+      background: var(--champagne);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .corp-cta h2 { margin-bottom: 0.85rem; }
+    .corp-cta p  { color: var(--text-muted); margin: 0 auto 2.5rem; font-size: 1.05rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .corp-intro { grid-template-columns: 1fr; gap: 2.5rem; }
+      .corp-features { grid-template-columns: 1fr; }
+      .corp-pricing-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .corp-pricing-grid { grid-template-columns: 1fr 1fr; }
+      .corp-subnav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════ -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a href="index.html" class="logo logo--light" aria-label="Villa Concierge Co.">
+        <span class="logo__name">VILLA CONCIERGE CO.</span>
+        <span class="logo__rule"></span>
+        <span class="logo__parent">A Villa Management Group Company</span>
+      </a>
+      <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="serve.html">Who We Serve</a></li>
+          <li><a href="hospitality.html">Arrive &amp; Thrive™</a></li>
+          <li><a href="insurance.html">For Adjusters</a></li>
+          <li><a href="homeowners.html">For Homeowners</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--gold nav-cta">Contact Us</a>
+      </nav>
+      <div class="nav-right">
+        <a href="tel:+10000000000" class="nav-phone">(000) 000-0000</a>
+        <a href="contact.html" class="btn btn--gold nav-cta">Get Housing Now</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section class="corp-hero">
+    <span class="label">Corporate &amp; Healthcare</span>
+    <span class="gold-rule gold-rule--center"></span>
+    <h1>Premium Housing for the Professionals Who Drive Business</h1>
+    <p>Furnished housing that matches the standard your organization expects — managed entirely by Villa Concierge Co. with clean billing and zero administrative burden on your team.</p>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       AUDIENCE SUB-NAV
+  ══════════════════════════════════════════ -->
+  <nav class="corp-subnav" aria-label="Audience sections">
+    <div class="corp-subnav-inner">
+      <a href="#corporate"     class="corp-subnav-link">Corporate Relocation</a>
+      <a href="#healthcare"    class="corp-subnav-link">Travel Nurse &amp; Healthcare</a>
+      <a href="#construction"  class="corp-subnav-link">Construction &amp; Workforce</a>
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 1 — CORPORATE RELOCATION
+  ══════════════════════════════════════════ -->
+  <section class="corp-section" id="corporate">
+    <div class="corp-section-inner">
+
+      <div class="corp-section-label-bar">
+        <span class="label">Corporate Relocation</span>
+      </div>
+
+      <div class="corp-intro">
+        <div>
+          <h2>All-Inclusive Housing That Reflects Your Organization</h2>
+          <p>Relocating employees need more than a furnished apartment. They need a space that matches their role, their family's needs, and the professional standard your company upholds. We deliver exactly that — without any coordination burden on your HR or mobility team.</p>
+          <p>One call assigns a dedicated contact. One invoice arrives each month. Every unit is inspected, documented, and managed end-to-end by Villa Concierge Co.</p>
+          <div class="btn-group">
+            <a href="contact.html" class="btn btn--gold">Inquire About Corporate Housing</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="corp-specs">
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              All-Inclusive Furnished Housing
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              30-Day Minimum Stays
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Executive &amp; Standard Tiers
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Monthly Corporate Billing
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Dedicated Account Manager
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Arrive &amp; Thrive™ Available
+            </div>
+          </div>
+
+          <div class="corp-pricing" style="margin-top: 2rem;">
+            <div class="corp-pricing-heading">Available Unit Types</div>
+            <div class="corp-pricing-grid">
+              <div class="corp-pricing-item">
+                <div class="unit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                </div>
+                <div class="unit-type">Studio</div>
+                <div class="unit-label">Solo Executive</div>
+              </div>
+              <div class="corp-pricing-item">
+                <div class="unit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div class="unit-type">1 Bedroom</div>
+                <div class="unit-label">Professional</div>
+              </div>
+              <div class="corp-pricing-item">
+                <div class="unit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 20h20M6 20V10l6-6 6 6v10"/><path d="M10 20v-5h4v5"/><path d="M14 10h2M8 10h2"/></svg>
+                </div>
+                <div class="unit-type">2–3 Bedroom</div>
+                <div class="unit-label">With Family</div>
+              </div>
+              <div class="corp-pricing-item">
+                <div class="unit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                </div>
+                <div class="unit-type">Executive Home</div>
+                <div class="unit-label">Senior Placement</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="corp-features">
+        <div class="corp-feature">
+          <div class="corp-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <div>
+            <h4>Clean Monthly Corporate Billing</h4>
+            <p>A single itemized invoice per employee per month, formatted for corporate accounts payable. No surprise charges, no ambiguous line items.</p>
+          </div>
+        </div>
+        <div class="corp-feature">
+          <div class="corp-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div>
+            <h4>Executive &amp; Standard Tiers</h4>
+            <p>Housing that matches the seniority and expectations of each employee — from entry-level professional to C-suite executive relocation.</p>
+          </div>
+        </div>
+        <div class="corp-feature">
+          <div class="corp-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div>
+            <h4>Family-Ready Placements</h4>
+            <p>Relocating employees with families need more than a bed. We account for school districts, childcare proximity, pets, and lifestyle when sourcing a match.</p>
+          </div>
+        </div>
+        <div class="corp-feature">
+          <div class="corp-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div>
+            <h4>Arrive &amp; Thrive™ Optional Add-On</h4>
+            <p>Welcome kits, fridge stocking, weekly housekeeping, and WFH setups — available for any corporate placement to ensure a smooth first-week experience.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 2 — TRAVEL NURSE & HEALTHCARE
+  ══════════════════════════════════════════ -->
+  <section class="corp-section" id="healthcare">
+    <div class="corp-section-inner">
+
+      <div class="corp-section-label-bar">
+        <span class="label">Travel Nurse &amp; Healthcare</span>
+      </div>
+
+      <div class="corp-intro">
+        <div>
+          <h2>Consistent Housing Your Nurses Can Count On</h2>
+          <p>Travel nurses don't have time to worry about where they're sleeping. They need clean, furnished, well-managed housing near their assignment hospital — available fast, with agency-direct billing so the transaction is invisible to them.</p>
+          <p>We've built our healthcare housing program around the 13-week contract model and the operational expectations of staffing agencies, hospital systems, and MSPs. Fast placement, zero maintenance headaches, and a nurse who shows up rested and ready.</p>
+          <div class="btn-group">
+            <a href="contact.html" class="btn btn--gold">Inquire About Nurse Housing</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="corp-specs">
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              13-Week Contract Housing
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Near-Hospital Placement
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Agency-Direct Billing
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Furnished Finder Listed
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Fast Placement Protocol
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Extension-Friendly Leases
+            </div>
+          </div>
+
+          <div class="corp-pricing" style="margin-top: 2rem;">
+            <div class="corp-pricing-heading">Unit Options</div>
+            <div class="corp-pricing-grid">
+              <div class="corp-pricing-item">
+                <div class="unit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+                </div>
+                <div class="unit-type">Studio</div>
+                <div class="unit-label">Solo Nurse</div>
+              </div>
+              <div class="corp-pricing-item">
+                <div class="unit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div class="unit-type">1 Bedroom</div>
+                <div class="unit-label">With Partner</div>
+              </div>
+              <div class="corp-pricing-item">
+                <div class="unit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 20h20M6 20V10l6-6 6 6v10"/><path d="M10 20v-5h4v5"/></svg>
+                </div>
+                <div class="unit-type">2 Bedroom</div>
+                <div class="unit-label">With Family</div>
+              </div>
+              <div class="corp-pricing-item">
+                <div class="unit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>
+                </div>
+                <div class="unit-type">Team House</div>
+                <div class="unit-label">2–4 Nurses</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="corp-features">
+        <div class="corp-feature">
+          <div class="corp-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Fast Placement Protocol</h4>
+            <p>When an assignment is confirmed, we move. Most nurse housing placements are confirmed within 48–72 hours of the request — often faster for established agency partners.</p>
+          </div>
+        </div>
+        <div class="corp-feature">
+          <div class="corp-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <div>
+            <h4>Agency-Direct Billing</h4>
+            <p>Invoices go directly to the staffing agency — not the nurse. Clean, itemized, and formatted for agency accounting. No financial friction for the clinician.</p>
+          </div>
+        </div>
+        <div class="corp-feature">
+          <div class="corp-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <h4>Consistent Quality Standards</h4>
+            <p>Every unit meets our furnished housing standards — fully equipped kitchen, WiFi, linens, and utilities included. The same quality your nurses expect, every assignment.</p>
+          </div>
+        </div>
+        <div class="corp-feature">
+          <div class="corp-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+          </div>
+          <div>
+            <h4>Extension-Ready Leases</h4>
+            <p>13-week leases with straightforward extension options when contracts are renewed. No renegotiation headaches when an assignment goes longer than expected.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       SECTION 3 — CONSTRUCTION & WORKFORCE
+  ══════════════════════════════════════════ -->
+  <section class="corp-section" id="construction">
+    <div class="corp-section-inner">
+
+      <div class="corp-section-label-bar">
+        <span class="label">Construction &amp; Workforce</span>
+      </div>
+
+      <div class="corp-intro">
+        <div>
+          <h2>Workforce Housing That Keeps Your Project on Schedule</h2>
+          <p>Your crew needs to be near the job, rested, and ready. We source, coordinate, and manage workforce housing so your project manager never wastes time on accommodation logistics — and your team never shows up tired from a two-hour commute.</p>
+          <p>From a single superintendent to a 40-person crew, we handle the placement, the management, and the monthly billing — one line item in your project budget.</p>
+          <div class="btn-group">
+            <a href="contact.html" class="btn btn--gold">Inquire About Workforce Housing</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="corp-specs">
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Near-Site Placement
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Per-Bed &amp; Per-Unit Pricing
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Shared &amp; Private Units
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Project Setup Coordination
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Monthly Management Included
+            </div>
+            <div class="corp-spec">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Scalable — 1 to 40+ Workers
+            </div>
+          </div>
+
+          <div class="corp-pricing" style="margin-top: 2rem;">
+            <div class="corp-pricing-heading">Pricing Structure</div>
+            <div class="corp-pricing-grid">
+              <div class="corp-pricing-item">
+                <div class="unit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div class="unit-type">Per Bed</div>
+                <div class="unit-label">Shared Units</div>
+              </div>
+              <div class="corp-pricing-item">
+                <div class="unit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div class="unit-type">Per Unit</div>
+                <div class="unit-label">Private Housing</div>
+              </div>
+              <div class="corp-pricing-item">
+                <div class="unit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                </div>
+                <div class="unit-type">Project Setup</div>
+                <div class="unit-label">One-Time Fee</div>
+              </div>
+              <div class="corp-pricing-item">
+                <div class="unit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+                </div>
+                <div class="unit-type">Monthly Mgmt</div>
+                <div class="unit-label">Included</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="corp-features">
+        <div class="corp-feature">
+          <div class="corp-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20M6 20V10l6-6 6 6v10"/><path d="M10 20v-5h4v5"/><path d="M4 10h3M17 10h3"/></svg>
+          </div>
+          <div>
+            <h4>Near-Site Sourcing</h4>
+            <p>We prioritize housing within practical commute distance of the job site. Your crew is rested, on time, and not burning an hour each way before they swing a hammer.</p>
+          </div>
+        </div>
+        <div class="corp-feature">
+          <div class="corp-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="8" y2="15"/><line x1="10" y1="15" x2="14" y2="15"/></svg>
+          </div>
+          <div>
+            <h4>Project Budget Billing</h4>
+            <p>Per-bed and per-unit pricing structured for project accounting. Monthly invoices arrive clean, consistent, and formatted for easy entry into your project management system.</p>
+          </div>
+        </div>
+        <div class="corp-feature">
+          <div class="corp-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div>
+            <h4>Scalable Across Project Phases</h4>
+            <p>Start with a superintendent. Add a full crew when mobilization begins. Scale down when phases complete. We flex with your project timeline, not the other way around.</p>
+          </div>
+        </div>
+        <div class="corp-feature">
+          <div class="corp-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+          </div>
+          <div>
+            <h4>Monthly Management Included</h4>
+            <p>Unit upkeep, issue resolution, and occupancy coordination are handled by our team throughout the project duration. Your PM has enough to manage — this isn't one of them.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       SHARED CTA
+  ══════════════════════════════════════════ -->
+  <section class="corp-cta">
+    <div class="container">
+      <span class="label">Ready to Work Together?</span>
+      <span class="gold-rule gold-rule--center"></span>
+      <h2>Let's Talk About Your Housing Needs</h2>
+      <p>Whether you need housing for one executive or an entire project team, we'll build a program that fits your organization and your budget.</p>
+      <div class="btn-group" style="justify-content: center;">
+        <a href="contact.html" class="btn btn--navy">Contact Our Team</a>
+        <a href="services.html" class="btn btn--outline">See All Services</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo logo--light" aria-label="Villa Concierge Co."><span class="logo__name">VILLA CONCIERGE CO.</span><span class="logo__rule"></span><span class="logo__parent">A Villa Management Group Company</span></a>
+          <p class="footer-tagline">Where Families Land Softly</p>
+          <p class="footer-parent">© 2025 Villa Management Group</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="hospitality.html">Arrive &amp; Thrive™</a></li>
+            <li><a href="insurance.html">For Adjusters</a></li>
+            <li><a href="homeowners.html">For Homeowners</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Insurance ALE Housing</a></li>
+            <li><a href="corporate.html">Corporate Relocation</a></li>
+            <li><a href="corporate.html">Travel Nurse Housing</a></li>
+            <li><a href="hospitality.html">Arrive &amp; Thrive™</a></li>
+            <li><a href="services.html">Family Support Services</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Contact Us</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            <p><a href="tel:+10000000000">(000) 000-0000</a><br/>Available 24/7</p>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <p><a href="mailto:info@villaconcierge.co">info@villaconcierge.co</a></p>
+          </div>
+          <div class="footer-availability">
+            <p><strong>CAT &amp; Emergency Response</strong><br/>Available 24/7 for catastrophe events and urgent placements.</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Villa Concierge Co. | A Villa Management Group Company | All Rights Reserved</p>
+        <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('is-scrolled', window.scrollY > 40); }, { passive: true });
+    const navToggle = document.getElementById('navToggle');
+    const navMenu   = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('is-open');
+      navToggle.classList.toggle('is-open', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('is-open');
+        navToggle.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Active subnav on scroll
+    const sections = document.querySelectorAll('.corp-section[id]');
+    const subLinks  = document.querySelectorAll('.corp-subnav-link');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          subLinks.forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === `#${e.target.id}`));
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    sections.forEach(s => io.observe(s));
+  </script>
+
+</body>
+</html>
