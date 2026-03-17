@@ -171,98 +171,6 @@
       max-width: none;
     }
 
-    /* TEAM */
-    .about-team {
-      background: var(--bg);
-      padding: 6rem 2rem;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
-      margin-top: 3.5rem;
-    }
-
-    .team-member {
-      text-align: center;
-    }
-
-    .team-avatar {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      background: var(--champagne);
-      border: 2px solid rgba(216,172,85,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.75rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Photo placeholder — gold initials on warm bg */
-    .team-avatar-initials {
-      font-family: var(--font-heading);
-      font-size: 2.4rem;
-      font-weight: 500;
-      color: rgba(216,172,85,0.45);
-      user-select: none;
-    }
-
-    /* Subtle ring */
-    .team-avatar::before {
-      content: '';
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
-      border: 1px solid rgba(216,172,85,0.15);
-    }
-
-    .team-member h3 {
-      font-size: 1.15rem;
-      color: var(--navy);
-      margin-bottom: 0.3rem;
-    }
-
-    .team-member-title {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .team-member p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      max-width: 28ch;
-      margin: 0 auto;
-    }
-
-    .team-note {
-      text-align: center;
-      margin-top: 3rem;
-      padding: 1.5rem 2rem;
-      background: var(--champagne);
-      border: 1px solid rgba(216,172,85,0.18);
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .team-note p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      font-style: italic;
-      max-width: none;
-      line-height: 1.65;
-    }
-
     /* PARENT COMPANY */
     .about-vmg {
       background: var(--section-alt);
@@ -383,13 +291,11 @@
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .about-values-grid { grid-template-columns: 1fr; }
-      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
       .about-vmg-inner { grid-template-columns: 1fr; gap: 3rem; }
       .about-vmg-divider { display: none; }
     }
 
     @media (max-width: 600px) {
-      .team-grid { grid-template-columns: 1fr; }
       .about-story-pull { padding: 1.25rem 1.5rem; }
     }
   </style>
@@ -419,7 +325,7 @@
         <a href="contact.html" class="btn btn--gold nav-cta">Contact Us</a>
       </nav>
       <div class="nav-right">
-        <a href="tel:+10000000000" class="nav-phone">(000) 000-0000</a>
+        <a href="tel:+12406304762" class="nav-phone">(240) 630-4762</a>
         <a href="contact.html" class="btn btn--gold nav-cta">Get Housing Now</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -517,56 +423,6 @@
 
 
   <!-- ══════════════════════════════════════════
-       TEAM
-  ══════════════════════════════════════════ -->
-  <section class="about-team">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="label">The Team</span>
-        <span class="gold-rule gold-rule--center"></span>
-        <h2>The People Behind Every Placement</h2>
-        <p>A small, dedicated team with deep roots in housing management, insurance services, and family support.</p>
-      </div>
-
-      <div class="team-grid">
-
-        <div class="team-member">
-          <div class="team-avatar" aria-label="Photo placeholder">
-            <span class="team-avatar-initials" aria-hidden="true">VC</span>
-          </div>
-          <h3>Founder &amp; CEO</h3>
-          <span class="team-member-title">Villa Concierge Co.</span>
-          <p>Placeholder — founder bio and photo to be added.</p>
-        </div>
-
-        <div class="team-member">
-          <div class="team-avatar" aria-label="Photo placeholder">
-            <span class="team-avatar-initials" aria-hidden="true">VC</span>
-          </div>
-          <h3>Director of Operations</h3>
-          <span class="team-member-title">Placement &amp; Case Management</span>
-          <p>Placeholder — team member bio and photo to be added.</p>
-        </div>
-
-        <div class="team-member">
-          <div class="team-avatar" aria-label="Photo placeholder">
-            <span class="team-avatar-initials" aria-hidden="true">VC</span>
-          </div>
-          <h3>Client Relations Manager</h3>
-          <span class="team-member-title">Insurance &amp; Corporate Partners</span>
-          <p>Placeholder — team member bio and photo to be added.</p>
-        </div>
-
-      </div>
-
-      <div class="team-note">
-        <p>Our team grows alongside our network. If you're passionate about hospitality, housing, and making hard situations easier for families, we'd love to hear from you. <a href="contact.html" style="color: var(--gold); font-weight: 600;">Reach out anytime.</a></p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════
        A VILLA MANAGEMENT GROUP COMPANY
   ══════════════════════════════════════════ -->
   <section class="about-vmg">
@@ -656,14 +512,14 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/>
             </svg>
-            <p><a href="tel:+10000000000">(000) 000-0000</a><br/>Available 24/7</p>
+            <p><a href="tel:+12406304762">(240) 630-4762</a><br/>Available 24/7</p>
           </div>
           <div class="footer-contact-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
-            <p><a href="mailto:info@villaconcierge.co">info@villaconcierge.co</a></p>
+            <p><a href="mailto:info@Villamanagegroup.com">info@Villamanagegroup.com</a></p>
           </div>
           <div class="footer-availability">
             <p><strong>CAT &amp; Emergency Response</strong><br/>Available 24/7 for catastrophe events and urgent placements.</p>
