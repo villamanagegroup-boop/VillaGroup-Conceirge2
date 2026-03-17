@@ -769,9 +769,10 @@
       submitBtn.textContent = 'Sending…';
 
       try {
-        const res = await fetch(API_URL, {
+        await fetch(API_URL, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
           body: JSON.stringify({
             name:     nameField.value.trim(),
             email:    emailField.value.trim(),
@@ -782,11 +783,6 @@
             referral: document.getElementById('referral').value,
           }),
         });
-
-        if (!res.ok) {
-          const data = await res.json().catch(() => ({}));
-          throw new Error(data.error || 'Submission failed');
-        }
 
         form.style.display = 'none';
         success.style.display = 'block';
