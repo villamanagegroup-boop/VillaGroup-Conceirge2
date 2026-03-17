@@ -281,6 +281,16 @@ li p { max-width: none; }
   border-color: rgba(255,255,255,0.8);
 }
 
+.btn--cream {
+  background: var(--champagne);
+  color: var(--navy);
+}
+.btn--cream:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
 .btn--navy {
   background: var(--navy);
   color: var(--champagne);
