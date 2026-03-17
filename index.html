@@ -62,13 +62,83 @@
       pointer-events: none;
     }
 
-    .hero-content {
+    .hero-split {
       position: relative;
       z-index: 1;
-      padding: 4rem 2rem 6rem;
       max-width: var(--max-w);
       margin: 0 auto;
       width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      padding: 4rem 2rem 6rem;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-photo {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .hero-photo-frame {
+      position: absolute;
+      top: 16px;
+      right: -16px;
+      bottom: -16px;
+      left: 16px;
+      border: 1.5px solid rgba(216, 172, 85, 0.35);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* PHOTO BANNER */
+    .photo-banner {
+      height: 460px;
+      background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center 60%;
+      background-attachment: fixed;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(1,12,29,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-banner-inner {
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .photo-banner-inner blockquote {
+      font-family: var(--font-heading);
+      font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--champagne);
+      max-width: 22ch;
+      margin: 0 auto;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
     }
 
     .hero-label {
@@ -418,6 +488,19 @@
       .testimonials-grid { grid-template-columns: 1fr; gap: 1.25rem; }
     }
 
+    @media (max-width: 900px) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 3rem 2rem 5rem;
+      }
+      .hero-photo { display: none; }
+      .photo-banner {
+        background-attachment: scroll;
+        height: 360px;
+      }
+    }
+
     @media (max-width: 700px) {
       .hero h1 { font-size: 2.6rem; }
       .hero-trust { flex-wrap: wrap; }
@@ -467,27 +550,40 @@
        HERO
   ══════════════════════════════════════════ -->
   <section class="hero" aria-label="Hero">
-    <div class="hero-content">
+    <div class="hero-split">
 
-      <div class="hero-label">
-        <span>Villa Concierge Co.</span>
+      <div class="hero-content">
+
+        <div class="hero-label">
+          <span>Villa Concierge Co.</span>
+        </div>
+
+        <h1>Where Families<br /><em>Land Softly</em></h1>
+
+        <p class="hero-sub">
+          Premium relocation housing and concierge support for families navigating displacement — managed entirely by Villa Concierge Co.
+        </p>
+
+        <div class="btn-group">
+          <a href="contact.html" class="btn btn--gold">Get Housing Now</a>
+          <a href="insurance.html" class="btn btn--outline-white">For Insurance Professionals</a>
+        </div>
+
+        <div class="hero-trust">
+          <span>Serving families across the Southeast &amp; Gulf Coast</span>
+          <div class="hero-trust-dot"></div>
+          <span>Available 24/7</span>
+        </div>
+
       </div>
 
-      <h1>Where Families<br /><em>Land Softly</em></h1>
-
-      <p class="hero-sub">
-        Premium relocation housing and concierge support for families navigating displacement — managed entirely by Villa Concierge Co.
-      </p>
-
-      <div class="btn-group">
-        <a href="contact.html" class="btn btn--gold">Get Housing Now</a>
-        <a href="insurance.html" class="btn btn--outline-white">For Insurance Professionals</a>
-      </div>
-
-      <div class="hero-trust">
-        <span>Serving families across the Southeast &amp; Gulf Coast</span>
-        <div class="hero-trust-dot"></div>
-        <span>Available 24/7</span>
+      <div class="hero-photo">
+        <img
+          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+          alt="Beautifully furnished home interior"
+          loading="eager"
+        />
+        <div class="hero-photo-frame" aria-hidden="true"></div>
       </div>
 
     </div>
@@ -683,6 +779,20 @@
 
     </div>
   </section>
+
+
+  <!-- ══════════════════════════════════════════
+       PHOTO BANNER
+  ══════════════════════════════════════════ -->
+  <div class="photo-banner" role="img" aria-label="A beautifully furnished home — Villa Concierge Co.">
+    <div class="photo-banner-overlay">
+      <div class="photo-banner-inner">
+        <span class="label" style="color: var(--gold);">Villa Concierge Co.</span>
+        <span class="gold-rule gold-rule--center"></span>
+        <blockquote>Every family deserves<br/>to land softly.</blockquote>
+      </div>
+    </div>
+  </div>
 
 
   <!-- ══════════════════════════════════════════

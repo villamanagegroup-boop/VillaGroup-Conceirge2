@@ -300,11 +300,49 @@
     .corp-cta h2 { margin-bottom: 0.85rem; }
     .corp-cta p  { color: var(--text-muted); margin: 0 auto 2.5rem; font-size: 1.05rem; }
 
+    /* PHOTO BANNER */
+    .photo-banner {
+      height: 460px;
+      background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center 40%;
+      background-attachment: fixed;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(1,12,29,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-banner-inner {
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .photo-banner-inner blockquote {
+      font-family: var(--font-heading);
+      font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--champagne);
+      max-width: 22ch;
+      margin: 0 auto;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .corp-intro { grid-template-columns: 1fr; gap: 2.5rem; }
       .corp-features { grid-template-columns: 1fr; }
       .corp-pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .photo-banner { background-attachment: scroll; height: 360px; }
     }
 
     @media (max-width: 600px) {
@@ -623,6 +661,18 @@
 
     </div>
   </section>
+
+
+  <!-- ══════════════════════════════════════════
+       PHOTO BANNER
+  ══════════════════════════════════════════ -->
+  <div class="photo-banner" role="img" aria-label="A modern, professionally furnished workspace">
+    <div class="photo-banner-overlay">
+      <div class="photo-banner-inner">
+        <blockquote>Housing that works<br/>as hard as your team.</blockquote>
+      </div>
+    </div>
+  </div>
 
 
   <!-- ══════════════════════════════════════════

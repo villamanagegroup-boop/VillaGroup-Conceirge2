@@ -288,11 +288,49 @@
       margin: 0 auto 2.5rem;
     }
 
+    /* PHOTO BANNER */
+    .photo-banner {
+      height: 460px;
+      background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center 50%;
+      background-attachment: fixed;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(1,12,29,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-banner-inner {
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .photo-banner-inner blockquote {
+      font-family: var(--font-heading);
+      font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--champagne);
+      max-width: 22ch;
+      margin: 0 auto;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .about-values-grid { grid-template-columns: 1fr; }
       .about-vmg-inner { grid-template-columns: 1fr; gap: 3rem; }
       .about-vmg-divider { display: none; }
+      .photo-banner { background-attachment: scroll; height: 360px; }
     }
 
     @media (max-width: 600px) {
@@ -377,6 +415,18 @@
       </div>
     </div>
   </section>
+
+
+  <!-- ══════════════════════════════════════════
+       PHOTO BANNER
+  ══════════════════════════════════════════ -->
+  <div class="photo-banner" role="img" aria-label="A beautifully furnished living space">
+    <div class="photo-banner-overlay">
+      <div class="photo-banner-inner">
+        <blockquote>We built this for the families —<br/>and we built it right.</blockquote>
+      </div>
+    </div>
+  </div>
 
 
   <!-- ══════════════════════════════════════════
